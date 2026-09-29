@@ -1,0 +1,102 @@
+GRADUATE TRACK - CRITICAL THINKING LAB
+Homework Assignment 2: My Movie Review
+Student: Thirunavukkarasu Palaniappa
+
+IMPORTANT EVIDENCE RULE
+The professor requires screenshots captured from your own submitted page, with the
+browser URL/local path visible, exact viewport widths, matching code excerpts, and
+your explanation. This file provides the experiment steps and reasoning scaffold.
+Do not fill in measurements or claim screenshots you have not personally captured.
+
+GRADUATE LAYOUT REQUIREMENTS
+- CSS Grid for major page regions, using named grid areas.
+- Flexbox for repeated/within-component alignment.
+- Responsive breakpoints at 700px and 480px.
+- Record computed dimensions at exactly 700px and 480px.
+- Complete both graduate questions: Architecture defense and Failure analysis.
+
+QUESTION 03 - ARCHITECTURE DEFENSE
+Prompt: Build the major content frame with named Grid areas and the review metadata
+with Flexbox. Record the same page at exactly 700px and 480px, then explain which
+relationship belongs to Grid and which belongs to Flexbox using measured overflow,
+computed dimensions, and alignment results.
+
+Suggested answer (adapt to your actual browser evidence):
+I used CSS Grid for the high-level relationship between the review content and the
+overview sidebar because these are two distinct page regions with a stable hierarchy.
+The .review-frame declares the named areas "reviews" and "overview". At the narrow
+breakpoint, the areas are placed in one column, with reviews first and overview second.
+This changes the page-level composition without changing the HTML order.
+
+I used Flexbox for the rating strip and each review quote/critic row because those
+components align items along one axis. The rating strip aligns the Rotten Tomatoes
+icon, score, and review count; the quote row aligns the vote icon beside the quote.
+Flexbox is appropriate here because the items need spacing and alignment, not a
+two-dimensional page-region map.
+
+Evidence to capture:
+1. At 700px viewport width: full page screenshot with URL visible.
+2. At 480px viewport width: full page screenshot with URL visible.
+3. DevTools Computed panel for .review-frame and .overview at each width.
+4. Record actual values below:
+   700px: viewport innerWidth = ______; .review-frame width = ______;
+          .review-main width = ______; .overview width = ______;
+          document scrollWidth = ______.
+   480px: viewport innerWidth = ______; .review-frame width = ______;
+          .review-main width = ______; .overview width = ______;
+          document scrollWidth = ______.
+5. Add one annotated screenshot identifying the Grid parent/areas and Flex children.
+
+How to test:
+- Open DevTools responsive device mode.
+- Set the viewport to exactly 700 CSS pixels wide; record computed values.
+- Repeat at exactly 480 CSS pixels wide.
+- Check document.documentElement.scrollWidth against window.innerWidth.
+  If scrollWidth is larger, find and fix the overflowing element before capturing
+  your final evidence.
+
+QUESTION 04 - FAILURE ANALYSIS
+Prompt: Introduce a controlled defect in a separate copy that causes a validator error,
+a clipped review, or a broken print layout. Diagnose from browser output and DevTools,
+explain the root cause, and show the corrected result without replacing original evidence.
+
+Recommended controlled defect (separate copy only):
+In a duplicate of styles.css, temporarily change:
+    .review-frame { grid-template-columns: minmax(0, 1fr) 250px; }
+to:
+    .review-frame { grid-template-columns: 550px 250px; }
+At a narrow viewport, the fixed-width columns can exceed the available frame width
+and cause horizontal overflow. Keep the experiment in a separate defect copy; do
+not leave the defect in the submitted styles.css.
+
+Diagnosis:
+- Reproduce at 480px and note whether document scrollWidth exceeds innerWidth.
+- Use DevTools Elements to inspect .review-frame and its grid tracks.
+- Identify the fixed 550px track as the cause if it forces the layout wider than
+  the viewport. Include the actual measurement from your test.
+- Correct the rule by restoring the responsive minmax(0, 1fr) column and the
+  one-column named-area layout at the narrow breakpoint.
+- Retest at 480px and capture the corrected state.
+
+Evidence to capture:
+1. Defect-state screenshot at 480px, URL visible.
+2. DevTools/computed evidence showing the oversized track or overflow measurement.
+3. Corrected-state screenshot at 480px.
+4. Exact faulty CSS declaration and corrected declaration.
+5. Short explanation in your own words: symptom, root cause, fix, and verification.
+
+Suggested response structure:
+Symptom: [what visibly happened; include your measurement]
+Root cause: [identify the exact declaration and explain why it caused the symptom]
+Correction: [show the corrected CSS rule]
+Verification: [state the new measurement and attach corrected screenshot]
+
+FINAL GRADUATE CHECK
+[ ] Named Grid areas are present in the submitted CSS.
+[ ] Flexbox is used for repeated component alignment.
+[ ] Responsive layouts are checked at 700px and 480px.
+[ ] Actual computed measurements are recorded (not estimated).
+[ ] Architecture defense includes annotated screenshots and CSS excerpts.
+[ ] Failure analysis uses a separate defect copy and shows both states.
+[ ] Original styles.css is restored to the corrected version.
+[ ] Do not claim validation or evidence completion until personally verified.

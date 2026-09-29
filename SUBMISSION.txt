@@ -1,0 +1,6 @@
+Name: Thirunavukkarasu Palaniappa
+Live URL: https://codd.cs.gsu.edu/~tpalaniappa1/web/hw2/index.html
+GitHub: ADD_YOUR_PUBLIC_REPOSITORY_URL
+Notes: Replace the fallback poster with the instructor-provided generaloverview.png
+if available. Validate index.html and styles.css, test the live URL, and add the
+Homework 2 link to your homepage before submitting this text file to iCollege.

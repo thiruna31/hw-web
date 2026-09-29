@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+Name: Thirunavukkarasu Palaniappa
+Course: Web Programming
+Assignment: Homework Assignment 2 - My Movie Review
+Description: Responsive movie review page for TMNT (2007).
+Files: index.html, styles.css, and local assets in hw2/.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM - My Movie Review</title>
+    <link rel="icon" href="hw2/rotten.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-banner">
+        <img src="hw2/banner.png" alt="Rancid Tomatoes movie reviews">
+    </header>
+
+    <h1 class="movie-title">TMNT (2007)</h1>
+
+    <main class="review-frame" id="main-content">
+        <section class="review-main" aria-label="Movie reviews">
+            <div class="rating-strip">
+                <img src="hw2/rotten.png" alt="" class="rating-icon">
+                <span class="rating-number">32%</span>
+                <span class="review-count">(8 reviews total)</span>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-column">
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“Ditching the checky, self-aware wink that helped to excuse the concept's inherent corniness, the movie attempts to look polished and cool, but the cheese is back in the cutting-edge puppetry of the 1990 live-action movie.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Peter Debruge<br><em>Variety</em></span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/fresh.png" alt="Fresh" class="vote-icon"><strong>“TMNT is a fun, action-filled adventure that will satisfy longtime fans and generate a legion of new ones.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Todd Gilchrist<br><em>IGN Movies</em></span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“It stinks”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Jay Sherman (unemployed)</span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“The rubber suits are done and they've been redone with fancy computer technology, but that hasn't stopped them from becoming dull.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Joshua Tyler<br><em>CinemaBlend.com</em></span></div>
+                    </article>
+                </div>
+
+                <div class="review-column">
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“The turtles themselves may look pretty, but their story is irreparable from their countercultural roots, a superhero tale of half shell have become an industry of their own once sought to spoof.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Jeannette Catsoulis<br><em>New York Times</em></span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“Impersonally animated and arbitrarily plotted, the story appears to have been made up as the filmmakers went along.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Ed Gonzalez<br><em>Slant Magazine</em></span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/fresh.png" alt="Fresh" class="vote-icon"><strong>“The striking use of image and motion allows each sequence to leave an impression. It's an accomplished restart to this franchise.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Mark Palermo<br><em>Coast (Halifax, Nova Scotia)</em></span></div>
+                    </article>
+                    <article class="review-item">
+                        <div class="quote"><img src="hw2/rotten.png" alt="Rotten" class="vote-icon"><strong>“The script feels like it was computer generated. This is the cheesy charm of the three live action films.”</strong></div>
+                        <div class="critic"><img src="hw2/critic.png" alt="" class="critic-icon"><span>Steve Rhodes<br><em>Internet Reviews</em></span></div>
+                    </article>
+                </div>
+            </div>
+            <div class="review-counter">(1-8) of 88</div>
+        </section>
+
+        <aside class="overview" aria-label="General overview">
+            <h2>GENERAL OVERVIEW</h2>
+            <img src="hw2/generaloverview.png" alt="TMNT (2007) movie poster" class="movie-poster">
+            <div class="overview-details">
+                <dl>
+                    <dt>STARRING</dt>
+                    <dd>Mako<br>Sarah Michelle Gellar</dd>
+                    <dt>DIRECTOR</dt>
+                    <dd>Kevin Munroe</dd>
+                    <dt>RATING</dt>
+                    <dd>PG</dd>
+                    <dt>THEATRICAL RELEASE</dt>
+                    <dd>Mar 23, 2007</dd>
+                    <dt>MOVIE SYNOPSIS</dt>
+                    <dd>After the defeat of their old arch nemesis, the Shredder, the Turtles have grown apart as a family.</dd>
+                    <dt>MPAA RATING</dt>
+                    <dd>PG, for animated action violence, some scary cartoon images and mild language</dd>
+                    <dt>RELEASE COMPANY</dt>
+                    <dd>Warner Bros.</dd>
+                    <dt>GENRE</dt>
+                    <dd>Action/Adventure, Comedies, Childrens, Martial Arts, Superheroes, Ninjas, Animated Characters</dd>
+                    <dt>OFFICIAL MOVIE SITE</dt>
+                    <dd><a href="https://www.warnerbros.com/">The Official TMNT Site</a></dd>
+                </dl>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="validators" aria-label="Validation links">
+        <a href="https://validator.w3.org/nu/">W3C HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/">W3C CSS</a>
+    </footer>
+</body>
+</html>
