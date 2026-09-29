@@ -1,0 +1,327 @@
+/*
+Name: Thirunavukkarasu Palaniappa
+Course: Web Programming
+Assignment: Homework Assignment 2 - My Movie Review
+Description: Styles for the TMNT (2007) review page.
+Layout decisions: CSS Grid defines the main review/sidebar regions and the
+two review columns; Flexbox aligns rating and quote components. Media queries
+stack regions at tablet/mobile widths. A print rule removes the page background.
+*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 8pt;
+    color: #000;
+    background: #fff url("hw2/background.png") repeat;
+}
+
+.site-banner {
+    height: 50px;
+    width: 100%;
+    background: #176000 url("hw2/bannerbackground.png") repeat-x;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.site-banner img {
+    display: block;
+    width: 800px;
+    max-width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
+
+.movie-title {
+    margin: 14px 0 16px;
+    text-align: center;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.review-frame {
+    width: 800px;
+    max-width: calc(100% - 24px);
+    margin: 0 auto 28px;
+    border: 4px solid gray;
+    display: grid;
+    grid-template-columns: minmax(0, 550px) 250px;
+    grid-template-areas: "reviews overview";
+    align-items: stretch;
+}
+
+.review-main {
+    grid-area: reviews;
+}
+
+.overview {
+    grid-area: overview;
+}
+
+.review-main {
+    min-width: 0;
+    background: #f1e69a;
+}
+
+.rating-strip {
+    min-height: 70px;
+    padding: 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    background: #245d18 url("hw2/rottenbackground.png") repeat-x;
+    color: white;
+}
+
+.rating-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.rating-number {
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.review-count {
+    align-self: flex-end;
+    margin-bottom: 12px;
+    font-size: 8pt;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2%;
+    padding: 8px;
+}
+
+.review-column {
+    min-width: 0;
+}
+
+.review-item {
+    margin: 0 0 20px;
+    break-inside: avoid;
+}
+
+.quote {
+    min-height: 48px;
+    padding: 8px;
+    border: 2px solid gray;
+    background: #e1d697;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 8pt;
+}
+
+.vote-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    object-fit: contain;
+}
+
+.quote strong {
+    font-weight: bold;
+}
+
+.critic {
+    min-height: 42px;
+    padding: 6px 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.critic-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.critic em {
+    font-style: italic;
+}
+
+.review-counter {
+    padding: 5px;
+    text-align: center;
+    background: #a2b964;
+}
+
+.overview {
+    min-width: 0;
+    background: #a2b964;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+}
+
+.overview h2 {
+    margin: 0;
+    padding: 16px 6px 12px;
+    background: #111;
+    color: white;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.movie-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 330px;
+    object-fit: cover;
+    object-position: top center;
+    background: #111;
+}
+
+.overview-details {
+    padding: 10px;
+}
+
+.overview dl {
+    margin: 0;
+}
+
+.overview dt {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.overview dt:first-child {
+    margin-top: 0;
+}
+
+.overview dd {
+    margin: 2px 0 0 30px;
+    line-height: 1.25;
+}
+
+.overview a {
+    color: #0645ad;
+}
+
+.validators {
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #aaa;
+}
+
+.validators a {
+    padding: 3px 5px;
+    border: 1px solid #777;
+    background: #fff;
+    color: #0645ad;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .review-frame {
+        grid-template-columns: minmax(0, 1fr) 220px;
+        grid-template-areas: "reviews overview";
+    }
+
+    .rating-number {
+        font-size: 40pt;
+    }
+}
+
+@media (max-width: 700px) {
+    .review-frame {
+        width: min(100% - 16px, 550px);
+        max-width: none;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "reviews"
+            "overview";
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .overview {
+        display: grid;
+        grid-template-columns: minmax(120px, 38%) 1fr;
+        align-items: start;
+    }
+
+    .overview h2 {
+        grid-column: 1 / -1;
+    }
+
+    .movie-poster {
+        max-height: none;
+    }
+
+    .overview-details {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-title {
+        font-size: 20pt;
+        margin: 12px 0;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rating-strip {
+        min-height: 60px;
+    }
+
+    .rating-number {
+        font-size: 34pt;
+    }
+
+    .overview {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-poster {
+        width: min(100%, 250px);
+        margin: 0 auto;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .validators {
+        position: static;
+        justify-content: flex-end;
+    }
+
+    .review-frame {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}
